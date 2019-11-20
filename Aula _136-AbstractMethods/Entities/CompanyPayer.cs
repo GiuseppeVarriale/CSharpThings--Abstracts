@@ -20,7 +20,7 @@ namespace Aula__136_AbstractMethods.Entities
         public override string TaxesPaid()
         {
             int taxPercent = EmployeesNumber > 10 ? 14 : 16;
-            double taxesPaid = taxPercent / 100 * AnualIncome;
+            double taxesPaid =((double)taxPercent / 100) * AnualIncome;
             return $"{Name}: $ {taxesPaid}";
         }
     }
