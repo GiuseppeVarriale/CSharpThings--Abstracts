@@ -15,7 +15,7 @@
             AnualIncome = anualIncome;
         }
 
-        public abstract string TaxesPaid();
+        public abstract double TaxesPaid();
 
     }
 }

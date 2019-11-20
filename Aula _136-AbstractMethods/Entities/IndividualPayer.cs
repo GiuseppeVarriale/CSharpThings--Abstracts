@@ -17,12 +17,12 @@ namespace Aula__136_AbstractMethods.Entities
             HealthExpenditures = healthExpenditures;
         }
 
-        public override string TaxesPaid()
+        public override double TaxesPaid()
         {
             int taxPercent = AnualIncome < 2000.00 ? 15 : 25;
             double healthCompensation = HealthExpenditures / 2.0;
             double taxesPaid = ((double)taxPercent / 100) * AnualIncome - healthCompensation;
-            return $"{Name}: $ {taxesPaid}";
+            return taxesPaid;
         }
     }
 }
