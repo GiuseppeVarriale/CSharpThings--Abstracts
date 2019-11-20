@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Globalization;
 using Aula__136_AbstractMethods.Entities;
@@ -38,10 +39,15 @@ namespace Aula__136_AbstractMethods
             Console.WriteLine();
             Console.WriteLine("TAXES PAID:");
             double totalTaxes = 0;
+            StringBuilder sb = new StringBuilder();
             foreach (TaxPayer taxPayer in taxPayers)
             {
-                Console.WriteLine(taxPayer.TaxesPaid());
+                totalTaxes += taxPayer.TaxesPaid();
+                Console.WriteLine($"{taxPayer.Name} $ {taxPayer.TaxesPaid().ToString("F2", CultureInfo.InvariantCulture)}");
             }
+            Console.WriteLine();
+            Console.WriteLine($"Total Taxes: $ {totalTaxes.ToString("F2", CultureInfo.InvariantCulture)}");
+            
         }
     }
 }
