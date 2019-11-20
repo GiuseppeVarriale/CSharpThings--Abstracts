@@ -5,7 +5,7 @@
         public string Name { get; private set; }
         public double AnualIncome { get; private set; }
 
-        public abstract string PayTaxes();
+        public abstract string TaxesPaid();
 
     }
 }
