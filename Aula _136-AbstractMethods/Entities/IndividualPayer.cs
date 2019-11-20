@@ -8,9 +8,21 @@ namespace Aula__136_AbstractMethods.Entities
     {
         public double HealthExpenditures { get; private set; }
 
-        public override string PayTaxes()
+        public IndividualPayer()
         {
-            throw new NotImplementedException();
+        }
+
+        public IndividualPayer(string name, double anualIncome,double healthExpenditures) : base(name, anualIncome)
+        {
+            HealthExpenditures = healthExpenditures;
+        }
+
+        public override string TaxesPaid()
+        {
+            int taxPercent = AnualIncome < 2000.00 ? 15 : 25;
+            double healthCompensation = HealthExpenditures / 2;
+            double taxesPaid = taxPercent / 100 * AnualIncome - healthCompensation;
+            return $"{Name}: $ {taxesPaid}";
         }
     }
 }
